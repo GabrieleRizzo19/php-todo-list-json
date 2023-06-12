@@ -12,7 +12,7 @@ createApp({
     mounted(){
         axios.get('./api.php')
         .then(result => {
-            stringArray = [...result.data];
+            this.stringArray = [...result.data];
             console.log("stringArray: ", stringArray);
         })
     }
