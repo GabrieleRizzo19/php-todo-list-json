@@ -1,7 +1,7 @@
 <?php 
 
     $taskList = file_get_contents('./taskList.json');
-    $taskList = json_decode($taskList);
+    $taskList = json_decode($taskList, true);
 
     if(isset($_POST['task'])){
         $taskToAdd = [
@@ -16,8 +16,8 @@
         file_put_contents('./taskList.json', json_encode($taskList));
     }else if(isset($_POST['change'])){
         $changeIndex = $_POST['index'];
-        $taskList[$changeIndex]["done"] = true;
-        // file_put_contents('./taskList.json', json_encode($taskList));
+        $taskList[$changeIndex]['done'] = !$taskList[$changeIndex]['done'];
+        file_put_contents('./taskList.json', json_encode($taskList));
     }
 
     header('Content-Type: application/json');
