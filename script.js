@@ -72,6 +72,7 @@ createApp({
             }
 
             this.sendData(data);
+            this.editTaskText = "";
         }
 
         
