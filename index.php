@@ -23,8 +23,8 @@
                             {{ task.task }}
                             <div class="my-task-button">
                                 <button class="btn me-2" :class="getChangeStatusClass(i)" @click="changeTaskStatus(i)"><i class="fa-solid" :class="getChangeStatusIcon(i)"></i></button>
-                                <button class="btn btn-warning me-2" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-pencil"></i></button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <button class="btn btn-warning me-2" data-bs-toggle="modal" :data-bs-target="`#editModal${i}`"><i class="fa-solid fa-pencil"></i></button>
+                                <div class="modal fade" :id="`editModal${i}`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -48,10 +48,11 @@
                         </li>
                     </ul>
                 </div>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Inserisci elemento..." v-model="newTaskText">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Inserisci elemento..." v-model="newTaskText" @keyup.enter="addTask">
                     <button type="submit" class="btn btn-outline-warning px-4" @click="addTask">Inserisci</button>
                 </div>
+                <button class="btn btn-secondary w-100 my-delete-all" @click="deleteAll">CANCELLA TUTTO</button>
             </div>
 
         </div>

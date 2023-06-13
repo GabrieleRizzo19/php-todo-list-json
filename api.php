@@ -23,6 +23,9 @@
         $editText = $_POST['editTaskText'];
         $taskList[$editIndex]['task'] = $editText;
         file_put_contents('./taskList.json', json_encode($taskList));
+    }else if(isset($_POST['deleteAll'])){
+        $taskList = [];
+        file_put_contents('./taskList.json', json_encode($taskList));
     }
 
     header('Content-Type: application/json');

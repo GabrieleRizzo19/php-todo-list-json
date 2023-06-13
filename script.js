@@ -73,6 +73,13 @@ createApp({
 
             this.sendData(data);
             this.editTaskText = "";
+        },
+        deleteAll(){
+            const data = {
+                deleteAll: true
+            }
+
+            this.sendData(data);
         }
 
         
