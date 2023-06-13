@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(0, 0, 48);
+}
+
+.my-task-box{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: 8rem;
+    color: white;
+    font-weight: 300;
+}
+
+.my-task-list{
+    background-color: white;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+li{
+    border-bottom: 1px solid grey;
+    padding: 1rem;
+}
+
+li:last-child{
+    border: none;
+}
+
+input{
+    height: 4rem;
+}
+
+.my-task-button button{
+    height: 3rem;
+    aspect-ratio: 1/1;
+    color: white;
+}

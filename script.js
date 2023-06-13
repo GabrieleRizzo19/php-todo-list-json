@@ -3,17 +3,36 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
-            stringArray: []
+            toDoList: []
         }
     },
     methods: {
-
+        getTaskTextClass(i){
+            if(this.toDoList[i].done){
+                return  "text-decoration-line-through";
+            }
+        },
+        getChangeStatusClass(i){
+            if(this.toDoList[i].done){
+                return  "btn-danger";
+            }else{
+                return  "btn-success";
+            }
+        },
+        getChangeStatusIcon(i){
+            if(this.toDoList[i].done){
+                return  "fa-xmark";
+            }else{
+                return  "fa-check";
+            }
+        }
+        
     },
     mounted(){
         axios.get('./api.php')
         .then(result => {
-            this.stringArray = [...result.data];
-            console.log("stringArray: ", stringArray);
+            this.toDoList = [...result.data];
+            console.log("toDoList: ", this.toDoList);
         })
     }
 }).mount('#app')

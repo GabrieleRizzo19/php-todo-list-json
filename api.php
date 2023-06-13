@@ -1,15 +1,10 @@
 <?php 
 
-    $stringArray = [
-        "parola1",
-        "parola2",
-        "parola3",
-        "parola4",
-        "parola5",
-    ];
+    $taskList = file_get_contents('./taskList.json');
+
+    $taskList = json_decode($taskList);
 
     header('Content-Type: application/json');
 
-    echo json_encode($stringArray);
-
+    echo json_encode($taskList);
 ?>

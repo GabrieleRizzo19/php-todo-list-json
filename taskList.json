@@ -1,0 +1,22 @@
+[
+    {
+        "task": "Insultare i creatori di Bootstrap",
+        "done": false
+    },
+    {
+        "task": "Insultare Patrick",
+        "done": true
+    },
+    {
+        "task": "Insultare Emanuele",
+        "done": true
+    },
+    {
+        "task": "Insultare Mathias",
+        "done": false
+    },
+    {
+        "task": "Insultare Giuseppe",
+        "done": false
+    }
+]
