@@ -48,10 +48,18 @@ createApp({
                 task: this.newTaskText
             }
             this.sendData(data);
+            this.newTaskText = "";
         },
         deleteTask(i){
             const data = {
                 delete: true,
+                index: i
+            }
+            this.sendData(data);
+        },
+        changeTaskStatus(i){
+            const data = {
+                change: true,
                 index: i
             }
             this.sendData(data);
