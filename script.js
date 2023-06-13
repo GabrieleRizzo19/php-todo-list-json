@@ -3,7 +3,9 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
-            toDoList: []
+            apiURL: './api.php',
+            toDoList: [],
+            newTaskText: ""
         }
     },
     methods: {
@@ -25,14 +27,33 @@ createApp({
             }else{
                 return  "fa-check";
             }
+        },
+        getData(){
+            axios.post(this.apiURL)
+            .then(result => {
+                this.toDoList = [...result.data];
+                console.log("toDoList: ", this.toDoList);
+            })
+        },
+        sendData(data){
+            axios.post(this.apiURL, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }})
+            .then(result => {
+                this.toDoList = [...result.data];
+                console.log("toDoList: ", this.toDoList);
+            })
+        },
+        addTask(){
+            const data = {
+                task: this.newTaskText
+            }
+
+            this.sendData(data);
         }
+
         
     },
     mounted(){
-        axios.get('./api.php')
-        .then(result => {
-            this.toDoList = [...result.data];
-            console.log("toDoList: ", this.toDoList);
-        })
+        this.getData();
     }
 }).mount('#app')

@@ -28,8 +28,8 @@
                     </ul>
                 </div>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Inserisci elemento...">
-                    <button type="submit" class="btn btn-outline-warning px-4">Inserisci</button>
+                    <input type="text" class="form-control" placeholder="Inserisci elemento..." v-model="newTaskText">
+                    <button type="submit" class="btn btn-outline-warning px-4" @click="addTask">Inserisci</button>
                 </div>
             </div>
             
