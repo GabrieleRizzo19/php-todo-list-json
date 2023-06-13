@@ -5,7 +5,8 @@ createApp({
         return {
             apiURL: './api.php',
             toDoList: [],
-            newTaskText: ""
+            newTaskText: "",
+            editTaskText: ""
         }
     },
     methods: {
@@ -62,6 +63,14 @@ createApp({
                 change: true,
                 index: i
             }
+            this.sendData(data);
+        },
+        editTask(i){
+            const data = {
+                editTaskText: this.editTaskText,
+                index: i
+            }
+
             this.sendData(data);
         }
 

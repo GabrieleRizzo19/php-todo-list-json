@@ -18,6 +18,11 @@
         $changeIndex = $_POST['index'];
         $taskList[$changeIndex]['done'] = !$taskList[$changeIndex]['done'];
         file_put_contents('./taskList.json', json_encode($taskList));
+    }else if(isset($_POST['editTaskText'])){
+        $editIndex = $_POST['index'];
+        $editText = $_POST['editTaskText'];
+        $taskList[$editIndex]['task'] = $editText;
+        file_put_contents('./taskList.json', json_encode($taskList));
     }
 
     header('Content-Type: application/json');
