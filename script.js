@@ -47,7 +47,13 @@ createApp({
             const data = {
                 task: this.newTaskText
             }
-
+            this.sendData(data);
+        },
+        deleteTask(i){
+            const data = {
+                delete: true,
+                index: i
+            }
             this.sendData(data);
         }
 

@@ -10,6 +10,9 @@
         ];
         $taskList[] = $taskToAdd;
         file_put_contents('./taskList.json', json_encode($taskList));
+    }else if(isset($_POST['delete'])){
+        $deleteIndex = $_POST['index'];
+        array_splice($taskList, $deleteIndex, 1);
     }
 
     header('Content-Type: application/json');

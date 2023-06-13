@@ -22,7 +22,7 @@
                             <div class="my-task-button">
                                 <button class="btn me-2" :class="getChangeStatusClass(i)" ><i class="fa-solid" :class="getChangeStatusIcon(i)"></i></button>
                                 <button class="btn btn-warning me-2"><i class="fa-solid fa-pencil"></i></button>
-                                <button class="btn btn-dark"><i class="fa-solid fa-trash"></i></button>
+                                <button class="btn btn-dark" @click="deleteTask(i)"><i class="fa-solid fa-trash"></i></button>
                             </div>
                         </li>
                     </ul>
